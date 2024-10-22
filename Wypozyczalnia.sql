@@ -17,19 +17,19 @@ DROP TABLE IF EXISTS Rezerwacja;
 
 CREATE TABLE Administracja(id_administracji INTEGER NOT NULL PRIMARY KEY, Imie TEXT NOT NULL, Nazwisko TEXT NOT NULL, Adres_Kontaktowy TEXT NOT NULL, Nazwa_Uzytkownika TEXT NOT NULL UNIQUE, Haslo TEXT NOT NULL UNIQUE); 
 
-INSERT INTO Administracja(id_administracji, Imie, Nazwisko, Adres_Kontaktowy, Nazwa_Uzytkownika, Haslo) VALUES (1, 'Tymoteusz', 'Maj', 'tymote@gmail.pl', 'Xeraoo', 'SuperPieski');
-INSERT INTO Administracja(id_administracji, Imie, Nazwisko, Adres_Kontaktowy, Nazwa_Uzytkownika, Haslo) VALUES (2, 'Filip', 'Konieczny', 'coconoon@gmail.pl', 'FixuMixu', 'Pjeski');
-INSERT INTO Administracja(id_administracji, Imie, Nazwisko, Adres_Kontaktowy, Nazwa_Uzytkownika, Haslo) VALUES (3, 'Nadia', 'Maksymiuk', 'ndinka@gmail.pl', 'Dinka', 'Zajonc');
-INSERT INTO Administracja(id_administracji, Imie, Nazwisko, Adres_Kontaktowy, Nazwa_Uzytkownika, Haslo) VALUES (4, 'Wiktoria', 'Drozdz', 'Wdrozdz@gmail.pl', 'Kasztan', 'KocieLapki');
-INSERT INTO Administracja(id_administracji, Imie, Nazwisko, Adres_Kontaktowy, Nazwa_Uzytkownika, Haslo) VALUES (5, 'Michal', 'Pedzik', 'PedzikM@gmail.pl', 'Clockwork', 'Drzewo');
+INSERT INTO Administracja(id_administracji, Imie, Nazwisko, Adres_Kontaktowy, Nazwa_Uzytkownika, Haslo) VALUES (1, 'T', 'M', 't@gmail.pl', 'X', 'SuperPieski');
+INSERT INTO Administracja(id_administracji, Imie, Nazwisko, Adres_Kontaktowy, Nazwa_Uzytkownika, Haslo) VALUES (2, 'F', 'K', 'coconoon@gmail.pl', 'F', 'Pjeski');
+INSERT INTO Administracja(id_administracji, Imie, Nazwisko, Adres_Kontaktowy, Nazwa_Uzytkownika, Haslo) VALUES (3, 'N', 'M', 'n@gmail.pl', 'Da', 'Z');
+INSERT INTO Administracja(id_administracji, Imie, Nazwisko, Adres_Kontaktowy, Nazwa_Uzytkownika, Haslo) VALUES (4, 'W', 'D', 'Wdz@gmail.pl', 'K', 'K');
+NSERT INTO Administracja(id_administracji, Imie, Nazwisko, Adres_Kontaktowy, Nazwa_Uzytkownika, Haslo) VALUES (5, 'M', 'P', 'P@gmail.pl', 'C', 'D');
 
 CREATE TABLE Klienci(id_Klienta INTEGER NOT NULL PRIMARY KEY, Imie TEXT NOT NULL, Nazwisko TEXT NOT NULL, Plec CHAR NOT NULL CHECK (Plec IN ('M', 'K')), Adres_email TEXT NOT NULL, Konto_Facebook TEXT NOT NULL UNIQUE, Adres_zamieszknia TEXT NOT NULL, Kod_Pocztowy TEXT NOT NULL, Nazwa_Uzytkownika TEXT NOT NULL UNIQUE, Haslo TEXT NOT NULL UNIQUE, id_administracji_k INTEGER NOT NULL, Status_Konta TEXT NOT NULL CHECK (Status_Konta IN ('Aktywne', 'Nieaktywne')), FOREIGN KEY (id_administracji_k) REFERENCES Administracja(id_administracji));
 
-INSERT INTO Klienci (id_Klienta, Imie, Nazwisko, Plec, Adres_email, Konto_Facebook, Adres_zamieszknia, Kod_Pocztowy, Nazwa_Uzytkownika, Haslo, id_administracji_k, Status_Konta) VALUES (1, 'Emilia', 'Waluga', 'K', 'emiliawaluga@student.agh.edu.pl', 'Emillia', 'Sosnowiec ul. Malachowskiego 15', '41-200', 'emilia_waluga', 'herbatka123', 1, 'Aktywne');
-INSERT INTO Klienci (id_Klienta, Imie, Nazwisko, Plec, Adres_email, Konto_Facebook, Adres_zamieszknia, Kod_Pocztowy, Nazwa_Uzytkownika, Haslo, id_administracji_k, Status_Konta) VALUES (2, 'Michal', 'Swiercz', 'M', 'swiercz@wp.pl', 'Michal', 'Miechow ul. Racławicka 153', '32-200', 'bad_badger', 'burRsuk13', 2, 'Nieaktywne');
-INSERT INTO Klienci (id_Klienta, Imie, Nazwisko, Plec, Adres_email, Konto_Facebook, Adres_zamieszknia, Kod_Pocztowy, Nazwa_Uzytkownika, Haslo, id_administracji_k, Status_Konta) VALUES (3, 'Katarzyna', 'Jurasz', 'K', 'kjurasz@02.pl', 'Kasiaaaa', 'Malzyce 612', '28-506', 'Jurasz_Kasia', 'Truskaweczka15', 3, 'Nieaktywne');
-INSERT INTO Klienci (id_Klienta, Imie, Nazwisko, Plec, Adres_email, Konto_Facebook, Adres_zamieszknia, Kod_Pocztowy, Nazwa_Uzytkownika, Haslo, id_administracji_k, Status_Konta) VALUES (4, 'Wiktoria', 'Noworzyn', 'K', 'nadarzyn@gmail.com', 'noworzynka', 'Cieszyn ul. Ustronska 32', '43-400', 'Nadarzyn', 'SlodkaAlpaka', 4, 'Aktywne');
-INSERT INTO Klienci (id_Klienta, Imie, Nazwisko, Plec, Adres_email, Konto_Facebook, Adres_zamieszknia, Kod_Pocztowy, Nazwa_Uzytkownika, Haslo, id_administracji_k, Status_Konta) VALUES (5, 'Aleksandra', 'Sedek', 'K', 'sedek@02.pl', 'IcedAlex', 'Charsznica 231', '32-250', 'Iced', 'Orwell1984', 5, 'Aktywne');
+INSERT INTO Klienci (id_Klienta, Imie, Nazwisko, Plec, Adres_email, Konto_Facebook, Adres_zamieszknia, Kod_Pocztowy, Nazwa_Uzytkownika, Haslo, id_administracji_k, Status_Konta) VALUES (1, 'E', 'W', 'K', 'ea@student.agh.edu.pl', 'E', 'S', '4', 'e', 'he', 1, 'Aktywne');
+INSERT INTO Klienci (id_Klienta, Imie, Nazwisko, Plec, Adres_email, Konto_Facebook, Adres_zamieszknia, Kod_Pocztowy, Nazwa_Uzytkownika, Haslo, id_administracji_k, Status_Konta) VALUES (2, 'Mi', 'Scz', 'M', 's@wp.pl', 'M', 'M', '3', 'br', 'b3', 2, 'Nieaktywne');
+INSERT INTO Klienci (id_Klienta, Imie, Nazwisko, Plec, Adres_email, Konto_Facebook, Adres_zamieszknia, Kod_Pocztowy, Nazwa_Uzytkownika, Haslo, id_administracji_k, Status_Konta) VALUES (3, 'K', 'Juz', 'K', 'kz@02.pl', 'Ka', 'M', '87', 'Ja', 'T5', 3, 'Nieaktywne');
+INSERT INTO Klienci (id_Klienta, Imie, Nazwisko, Plec, Adres_email, Konto_Facebook, Adres_zamieszknia, Kod_Pocztowy, Nazwa_Uzytkownika, Haslo, id_administracji_k, Status_Konta) VALUES (4, 'W', 'yn', 'K', 'n@gmail.com', 'n', 'C', '4400', 'Na', 'S', 4, 'Aktywne');
+INSERT INTO Klienci (id_Klienta, Imie, Nazwisko, Plec, Adres_email, Konto_Facebook, Adres_zamieszknia, Kod_Pocztowy, Nazwa_Uzytkownika, Haslo, id_administracji_k, Status_Konta) VALUES (5, 'Al', 'S', 'K', 's@02.pl', 'Icx', 'C1', '32-250', 'Ied', 'O4', 5, 'Aktywne');
 
 
 CREATE TABLE Potwierdzenie_Tozsamosci_Klienta(id_potwierdzenia INTEGER NOT NULL PRIMARY KEY, Nazwa_Potwierdzenia TEXT NOT NULL, Zalaczniki BLOB NOT NULL, id_Klienta_ptk INTEGER NOT NULL, FOREIGN KEY (id_Klienta_ptk) REFERENCES Klienci(id_Klienta));
@@ -42,9 +42,9 @@ INSERT INTO Potwierdzenie_Tozsamosci_Klienta(id_potwierdzenia, Nazwa_Potwierdzen
 
 CREATE TABLE Wlasciciel_Pojazdu(id_Wlasciciela INTEGER NOT NULL PRIMARY KEY, Imie_Wlasciciela TEXT NOT NULL, Nazwisko_Wlasciciela TEXT NOT NULL, Adres_Kontaktowy TEXT NOT NULL, Telefon_Kontaktowy TEXT NOT NULL UNIQUE, Nazwa_Uzytkownika TEXT NOT NULL UNIQUE, Haslo TEXT NOT NULL UNIQUE, id_administracji_wp INTEGER NOT NULL, Status_Konta TEXT NOT NULL CHECK (Status_Konta IN ('Aktywne', 'Nieaktywne')), FOREIGN KEY (id_administracji_wp) REFERENCES Administracja(id_administracji));
 
-INSERT INTO Wlasciciel_Pojazdu(id_Wlasciciela, Imie_Wlasciciela,Nazwisko_Wlasciciela, Adres_Kontaktowy, Telefon_Kontaktowy, Nazwa_Uzytkownika, Haslo, id_administracji_wp, Status_Konta) VALUES (1, 'Tymoteusz', 'Maj', 'Tymotaj@gmail.pl', '123456789', 'Xeraxoo', '2da1G45', 1, 'Aktywne');
-INSERT INTO Wlasciciel_Pojazdu(id_Wlasciciela, Imie_Wlasciciela,Nazwisko_Wlasciciela, Adres_Kontaktowy, Telefon_Kontaktowy, Nazwa_Uzytkownika, Haslo, id_administracji_wp, Status_Konta) VALUES (2, 'Wiktoria', 'Janus', 'WJan@gmail.pl', '987654321', 'xxJanusxx', 'AUIF1354DFBUSA', 3, 'Aktywne');
-INSERT INTO Wlasciciel_Pojazdu(id_Wlasciciela, Imie_Wlasciciela,Nazwisko_Wlasciciela, Adres_Kontaktowy, Telefon_Kontaktowy, Nazwa_Uzytkownika, Haslo, id_administracji_wp, Status_Konta) VALUES (3, 'Kamil', 'Chwastek', 'Poczciwy@gmail.pl', '43534131', 'Krzychu', '1SDGUA', 2, 'Nieaktywne');
+INSERT INTO Wlasciciel_Pojazdu(id_Wlasciciela, Imie_Wlasciciela,Nazwisko_Wlasciciela, Adres_Kontaktowy, Telefon_Kontaktowy, Nazwa_Uzytkownika, Haslo, id_administracji_wp, Status_Konta) VALUES (1, 'T', 'M', 'T@gmail.pl', '19', 'X', '25', 1, 'Aktywne');
+INSERT INTO Wlasciciel_Pojazdu(id_Wlasciciela, Imie_Wlasciciela,Nazwisko_Wlasciciela, Adres_Kontaktowy, Telefon_Kontaktowy, Nazwa_Uzytkownika, Haslo, id_administracji_wp, Status_Konta) VALUES (2, 'Wi', 'J', 'Wn@gmail.pl', '94321', '', 'AUIF1354DFBUSA', 3, 'Aktywne');
+INSERT INTO Wlasciciel_Pojazdu(id_Wlasciciela, Imie_Wlasciciela,Nazwisko_Wlasciciela, Adres_Kontaktowy, Telefon_Kontaktowy, Nazwa_Uzytkownika, Haslo, id_administracji_wp, Status_Konta) VALUES (3, 'Ka', 'C', 'P@gmail.pl', '43534131', '', '1SDGUA', 2, 'Nieaktywne');
 
 
 
@@ -129,11 +129,11 @@ INSERT INTO Wynajem(id_Wynajmu, Data_Rozpoczecia, Okres_Wynajmu, Dzien_Zwrotu, i
 
 CREATE TABLE Rezerwacja (id_Rezerwacji INTEGER NOT NULL PRIMARY KEY, id_Klienta_r INTEGER NOT NULL, id_Samochodu_r INTEGER NOT NULL, Rozpoczecie_rezerwacji DATE NOT NULL, Dzien_Zwrotu DATE NOT NULL, Dzien_Rezerwacji DATE NOT NULL, Adres_email TEXT NOT NULL, FOREIGN KEY (id_Klienta_r) REFERENCES Klienci(id_Klienta), FOREIGN KEY (id_Samochodu_r) REFERENCES Samochody(id_Samochodu));
 
-INSERT INTO Rezerwacja(id_Rezerwacji, id_Klienta_r, id_Samochodu_r, Rozpoczecie_rezerwacji, Dzien_Zwrotu, Dzien_Rezerwacji, Adres_email) VALUES (1, 1, 1, '2021-05-23', '2021-06-05', '2021-05-10','emiliawaluga@student.agh.edu.pl');
-INSERT INTO Rezerwacja(id_Rezerwacji, id_Klienta_r, id_Samochodu_r, Rozpoczecie_rezerwacji, Dzien_Zwrotu, Dzien_Rezerwacji, Adres_email) VALUES (2, 3, 5, '2021-06-26', '2021-06-30', '2021-05-29','kjurasz@02.pl');
-INSERT INTO Rezerwacja(id_Rezerwacji, id_Klienta_r, id_Samochodu_r, Rozpoczecie_rezerwacji, Dzien_Zwrotu, Dzien_Rezerwacji, Adres_email) VALUES (3, 2, 6, '2021-08-04', '2021-08-25', '2021-07-30','swiercz@wp.pl');
-INSERT INTO Rezerwacja(id_Rezerwacji, id_Klienta_r, id_Samochodu_r, Rozpoczecie_rezerwacji, Dzien_Zwrotu, Dzien_Rezerwacji, Adres_email) VALUES (4, 4, 8, '2021-08-06', '2021-08-31', '2021-05-12','nadarzyn@gmail.com');
-INSERT INTO Rezerwacja(id_Rezerwacji, id_Klienta_r, id_Samochodu_r, Rozpoczecie_rezerwacji, Dzien_Zwrotu, Dzien_Rezerwacji, Adres_email) VALUES (5, 5, 2, '2021-09-11', '2021-09-22', '2021-06-21','sedek@02.pl');
+INSERT INTO Rezerwacja(id_Rezerwacji, id_Klienta_r, id_Samochodu_r, Rozpoczecie_rezerwacji, Dzien_Zwrotu, Dzien_Rezerwacji, Adres_email) VALUES (1, 1, 1, '2021-05-23', '2021-06-05', '2021-05-10','e@student.agh.edu.pl');
+INSERT INTO Rezerwacja(id_Rezerwacji, id_Klienta_r, id_Samochodu_r, Rozpoczecie_rezerwacji, Dzien_Zwrotu, Dzien_Rezerwacji, Adres_email) VALUES (2, 3, 5, '2021-06-26', '2021-06-30', '2021-05-29','k@02.pl');
+INSERT INTO Rezerwacja(id_Rezerwacji, id_Klienta_r, id_Samochodu_r, Rozpoczecie_rezerwacji, Dzien_Zwrotu, Dzien_Rezerwacji, Adres_email) VALUES (3, 2, 6, '2021-08-04', '2021-08-25', '2021-07-30','s@wp.pl');
+INSERT INTO Rezerwacja(id_Rezerwacji, id_Klienta_r, id_Samochodu_r, Rozpoczecie_rezerwacji, Dzien_Zwrotu, Dzien_Rezerwacji, Adres_email) VALUES (4, 4, 8, '2021-08-06', '2021-08-31', '2021-05-12','n@gmail.com');
+INSERT INTO Rezerwacja(id_Rezerwacji, id_Klienta_r, id_Samochodu_r, Rozpoczecie_rezerwacji, Dzien_Zwrotu, Dzien_Rezerwacji, Adres_email) VALUES (5, 5, 2, '2021-09-11', '2021-09-22', '2021-06-21','s@02.pl');
 
 CREATE TABLE Platnosc(id_Platnosci INTEGER NOT NULL PRIMARY KEY, id_Wynajmu_p INTEGER NOT NULL, Kwota FLOAT NOT NULL, Oplaty_dodane FLOAT DEFAULT 0, Data_Platnosci DATE NOT NULL, Status_Platnosci TEXT NOT NULL CHECK (Status_Platnosci In ('Oplacone', 'Nieoplacone')), Sposob_Platnosci TEXT NOT NULL CHECK (Sposob_Platnosci IN ('Przelew', 'Gotowka', 'Karta')), id_administracji_p INTEGER NOT NULL, FOREIGN KEY (id_Wynajmu_p) REFERENCES Wynajem(id_Wynajmu), FOREIGN KEY (id_administracji_p) REFERENCES Administracja(id_administracji));
 
